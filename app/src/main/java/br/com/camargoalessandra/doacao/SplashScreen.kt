@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreen : AppCompatActivity() {
@@ -14,11 +15,13 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
 
-        GlideApp.with (this)
+        Picasso.get().load("https://drive.google.com/file/d/1K98NjY1stdaJ1zQTLT268xwiwEG64rSw/view").into(imgLogo)
+
+       /* GlideApp.with (this)
                 .load("https://drive.google.com/file/d/1K98NjY1stdaJ1zQTLT268xwiwEG64rSw/view")
                 //.placeholder(R.mipmap.space)
                 .into(imgLogo)
-
+*/
         Handler().postDelayed({
             val main = Intent(this, MainActivity::class.java)
             startActivity(main)
